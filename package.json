@@ -1,28 +1,13 @@
 {
-  "name": "mew-best-wd",
+  "name": "wedding-invite",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "next build"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "framer-motion": "latest",
-    "lucide-react": "latest",
-    "class-variance-authority": "latest",
-    "clsx": "latest",
-    "tailwind-merge": "latest"
-  },
-  "devDependencies": {
-  "typescript": "latest",
-  "@types/react": "latest",
-  "@types/node": "latest",
-  "tailwindcss": "latest",
-  "postcss": "latest",
-  "autoprefixer": "latest",
-  "@tailwindcss/postcss": "latest"
+    "next": "14.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "framer-motion": "^11.0.0"
   }
 }

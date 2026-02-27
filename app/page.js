@@ -21,40 +21,52 @@ export default function WeddingInvitationPage() {
   )}`;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#faf7f4] px-6 py-16">
-      <div className="w-full max-w-3xl bg-white rounded-3xl shadow-sm px-8 md:px-16 py-14 space-y-16">
+    <div
+      className="min-h-screen flex items-center justify-center px-6 py-16"
+      style={{
+        background: `
+          radial-gradient(circle at 20% 20%, rgba(255,220,230,0.4), transparent 40%),
+          radial-gradient(circle at 80% 80%, rgba(220,230,255,0.4), transparent 40%),
+          linear-gradient(135deg,#fff8f2,#fff,#f8fbff)
+        `,
+      }}
+    >
+      <div className="w-full max-w-4xl bg-white/80 backdrop-blur-md rounded-3xl shadow-md px-10 md:px-20 py-16 space-y-20">
 
         {/* Header */}
-        <div className="text-center space-y-3">
-          <p className={`${montserrat.className} tracking-[0.3em] text-xs text-gray-400`}>
+        <div className="text-center space-y-4">
+          <p className={`${montserrat.className} tracking-[0.35em] text-xs text-gray-400`}>
             WEDDING INVITATION
           </p>
         </div>
 
-        {/* Bride & Groom Section */}
+        {/* Couple Section */}
         <div className="relative">
 
-          {/* Vertical Divider */}
-          <div className="hidden md:block absolute left-1/2 top-0 h-full w-px bg-gray-200 -translate-x-1/2"></div>
+          {/* Divider */}
+          <div className="hidden md:block absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent -translate-x-1/2"></div>
 
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 text-center">
+          <div className="grid md:grid-cols-2 gap-16 md:gap-24">
 
             {/* Bride */}
-            <div className="space-y-4">
-              <h2 className={`${greatVibes.className} text-6xl text-gray-800`}>
+            <div className="text-center md:text-right space-y-5 md:pr-10">
+              <h2 className={`${greatVibes.className} text-6xl text-rose-500`}>
                 Mew
               </h2>
 
-              <p className={`${playfair.className} text-2xl text-gray-700`}>
-                ดร. เมวดี สร้อยทอง
-              </p>
+              <div className="space-y-2">
+                <p className={`${playfair.className} text-2xl text-gray-800`}>
+                  ดร. เมวดี สร้อยทอง
+                </p>
+                <p className={`${montserrat.className} text-sm text-gray-400`}>
+                  (มิว)
+                </p>
+              </div>
 
-              <p className={`${montserrat.className} text-sm text-gray-400`}>
-                (มิว)
-              </p>
-
-              <div className={`${montserrat.className} text-sm text-gray-600 space-y-1 pt-4`}>
-                <p>บุตรของ</p>
+              <div className={`${montserrat.className} text-sm text-gray-600 space-y-1 pt-6`}>
+                <p className="uppercase tracking-widest text-xs text-gray-400">
+                  บุตรของ
+                </p>
                 <p>
                   ศ.ดร เกษม สร้อยทอง <br />
                   กอบบุญ สร้อยทอง
@@ -63,21 +75,24 @@ export default function WeddingInvitationPage() {
             </div>
 
             {/* Groom */}
-            <div className="space-y-4">
-              <h2 className={`${greatVibes.className} text-6xl text-gray-800`}>
+            <div className="text-center md:text-left space-y-5 md:pl-10">
+              <h2 className={`${greatVibes.className} text-6xl text-indigo-500`}>
                 Best
               </h2>
 
-              <p className={`${playfair.className} text-2xl text-gray-700`}>
-                อิติ อรุณขจรศักดิ์
-              </p>
+              <div className="space-y-2">
+                <p className={`${playfair.className} text-2xl text-gray-800`}>
+                  อิติ อรุณขจรศักดิ์
+                </p>
+                <p className={`${montserrat.className} text-sm text-gray-400`}>
+                  (เบส)
+                </p>
+              </div>
 
-              <p className={`${montserrat.className} text-sm text-gray-400`}>
-                (เบส)
-              </p>
-
-              <div className={`${montserrat.className} text-sm text-gray-600 space-y-1 pt-4`}>
-                <p>บุตรของ</p>
+              <div className={`${montserrat.className} text-sm text-gray-600 space-y-1 pt-6`}>
+                <p className="uppercase tracking-widest text-xs text-gray-400">
+                  บุตรของ
+                </p>
                 <p>
                   พ่อ อรุณขจรศักดิ์ <br />
                   แม่ อรุณขจรศักดิ์
@@ -87,30 +102,30 @@ export default function WeddingInvitationPage() {
           </div>
         </div>
 
-        {/* Heart */}
+        {/* Heart Center */}
         <div className="flex justify-center">
-          <Heart className="w-6 h-6 text-gray-400" />
+          <Heart className="w-6 h-6 text-rose-400" />
         </div>
 
-        {/* Date */}
-        <div className="text-center space-y-4">
+        {/* Date Section */}
+        <div className="text-center space-y-5">
           <div className="flex items-center justify-center gap-2 text-gray-700">
             <CalendarDays className="w-5 h-5" />
-            <p className={`${playfair.className} text-3xl font-medium`}>
+            <p className={`${playfair.className} text-3xl md:text-4xl font-medium`}>
               Saturday, 16 May 2026
             </p>
           </div>
 
-          <p className={`${montserrat.className} text-lg text-gray-600`}>
+          <p className={`${montserrat.className} text-lg text-gray-600 tracking-wide`}>
             09.09 AM
           </p>
         </div>
 
         {/* Location */}
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-6">
           <div className="flex items-center justify-center gap-2 text-gray-700">
             <MapPin className="w-5 h-5" />
-            <p className={`${playfair.className} text-xl`}>
+            <p className={`${playfair.className} text-xl md:text-2xl`}>
               Canale House
             </p>
           </div>
@@ -119,11 +134,11 @@ export default function WeddingInvitationPage() {
             Bangkok, Thailand
           </p>
 
-          <div className="pt-6 flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-3 pt-4">
             <img
               src={qrCodeUrl}
               alt="QR Code Location"
-              className="w-36 h-36 rounded-xl border border-gray-200"
+              className="w-36 h-36 rounded-xl border border-gray-200 bg-white"
             />
             <p className="text-xs text-gray-400">
               Scan for location
@@ -132,7 +147,7 @@ export default function WeddingInvitationPage() {
         </div>
 
         {/* Blessing */}
-        <div className="text-center space-y-4 border-t pt-10">
+        <div className="border-t pt-12 text-center">
           <p className={`${playfair.className} text-gray-600 leading-relaxed`}>
             ด้วยความยินดีอย่างยิ่ง <br />
             ขอเรียนเชิญท่านร่วมเป็นเกียรติในพิธีมงคลสมรส <br />
@@ -141,7 +156,7 @@ export default function WeddingInvitationPage() {
         </div>
 
         {/* Schedule */}
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-5">
           <p className={`${playfair.className} text-xl text-gray-800`}>
             ลำดับพิธีการ
           </p>

@@ -37,73 +37,59 @@ export default function Home() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
-        className="w-full max-w-5xl"
+        className="w-full max-w-6xl"
       >
-        {/* Glass Card */}
-        <div className="bg-white/45 backdrop-blur-3xl border border-white/60 shadow-[0_35px_90px_rgba(0,0,0,0.15)] rounded-[60px] p-12 md:p-20 space-y-20">
+        <div className="bg-white/50 backdrop-blur-3xl border border-white/60 shadow-[0_35px_90px_rgba(0,0,0,0.15)] rounded-[70px] p-16 space-y-20">
 
           {/* Header */}
-          <div className="text-center space-y-5">
+          <div className="text-center space-y-6">
             <p className="text-sm tracking-[0.5em] text-gray-600">
               WEDDING INVITATION
             </p>
+
             <Heart className="w-8 h-8 text-rose-400 mx-auto" />
           </div>
 
-          {/* Bride & Groom */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-24 text-center">
+          {/* ===== ALIGN SECTION ===== */}
+          <div className="space-y-12">
 
-            {/* vertical line */}
-            <div className="hidden md:block absolute left-1/2 top-10 -translate-x-1/2 h-[80%] w-px bg-gradient-to-b from-transparent via-gray-300/70 to-transparent" />
-
-            {/* Bride */}
-            <div className="space-y-8">
-              <h2 className={`${greatVibes.className} text-9xl`}>
+            {/* Row 1: Names */}
+            <div className="grid grid-cols-2 items-center text-center">
+              <h2
+                className={`${greatVibes.className} text-8xl bg-gradient-to-r from-rose-400 via-pink-500 to-purple-500 bg-clip-text text-transparent`}
+              >
                 Mew
               </h2>
 
-              <p className={`${playfair.className} text-3xl font-semibold`}>
-                ดร. เมวดี สร้อยทอง
-              </p>
-
-              <p className="text-gray-500 text-base">(มิว)</p>
-
-              <div className="pt-6 space-y-3 text-gray-700 text-2xl leading-relaxed">
-                <p>ศ.ดร เกษม สร้อยทอง</p>
-                <p>กอบบุญ สร้อยทอง</p>
-              </div>
-            </div>
-
-            {/* Groom */}
-            <div className="space-y-8">
-              <h2 className={`${greatVibes.className} text-9xl`}>
+              <h2
+                className={`${greatVibes.className} text-8xl bg-gradient-to-r from-purple-500 via-pink-500 to-rose-400 bg-clip-text text-transparent`}
+              >
                 Best
               </h2>
+            </div>
 
-              <p className={`${playfair.className} text-3xl font-semibold`}>
-                อิติ อรุณขจรศักดิ์
-              </p>
+            {/* Row 2: Father */}
+            <div className="grid grid-cols-2 text-center text-3xl font-semibold text-gray-800">
+              <p>ศ.ดร เกษม สร้อยทอง</p>
+              <p>อิทธิศักดิ์ นวทวีเศรษฐ์</p>
+            </div>
 
-              <p className="text-gray-500 text-base">(เบส)</p>
-
-              <div className="pt-6 space-y-3 text-gray-700 text-2xl leading-relaxed">
-                <p>อิทธิศักดิ์ นวทวีเศรษฐ์</p>
-                <p>นิตย์รดี อรุณขจรศักดิ์</p>
-              </div>
+            {/* Row 3: Mother */}
+            <div className="grid grid-cols-2 text-center text-3xl font-semibold text-gray-800">
+              <p>กอบบุญ สร้อยทอง</p>
+              <p>นิตย์รดี อรุณขจรศักดิ์</p>
             </div>
           </div>
 
           {/* Date */}
-          <div className="text-center space-y-5 border-t pt-12">
+          <div className="text-center space-y-5 pt-10">
             <div className="flex items-center justify-center gap-3">
               <CalendarDays className="w-6 h-6 text-gray-700" />
-              <p className={`${playfair.className} text-4xl md:text-5xl font-semibold`}>
+              <p className={`${playfair.className} text-4xl font-semibold`}>
                 Saturday, 16 May 2026
               </p>
             </div>
-            <p className="text-2xl text-gray-700">
-              09.09 AM
-            </p>
+            <p className="text-2xl text-gray-700">09.09 AM</p>
           </div>
 
           {/* Location */}
@@ -131,7 +117,7 @@ export default function Home() {
           </div>
 
           {/* Schedule */}
-          <div className="text-center pt-10 border-t space-y-4">
+          <div className="text-center pt-10 space-y-4">
             <p className={`${playfair.className} text-3xl`}>
               ลำดับพิธีการ
             </p>

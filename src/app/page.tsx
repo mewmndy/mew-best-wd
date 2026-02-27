@@ -1,102 +1,146 @@
-import { Great_Vibes, Playfair_Display } from "next/font/google"
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { CalendarDays, MapPin, Heart } from "lucide-react";
+import { Great_Vibes, Playfair_Display, Montserrat } from "next/font/google";
 
-const greatVibes = Great_Vibes({
-  subsets: ["latin"],
-  weight: "400",
-})
+const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" });
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "600", "700"] });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-})
+export default function WeddingInvitationPage() {
+  const locationUrl = "https://maps.app.goo.gl/iN4wMiWQiDUijL6K9";
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(
+    locationUrl
+  )}`;
 
-export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-rose-100 via-white to-rose-200 flex items-center justify-center px-6 py-20">
+    <div
+      className="min-h-screen flex items-center justify-center p-8 md:p-12"
+      style={{
+        backgroundImage: `
+          radial-gradient(at 15% 20%, rgba(255,220,230,0.55) 0px, transparent 45%),
+          radial-gradient(at 85% 15%, rgba(220,230,255,0.55) 0px, transparent 45%),
+          radial-gradient(at 25% 75%, rgba(255,210,225,0.55) 0px, transparent 45%),
+          radial-gradient(at 75% 80%, rgba(255,235,210,0.55) 0px, transparent 45%),
+          linear-gradient(120deg,
+            #fff6e8 0%,
+            #ffe4ec 25%,
+            #e6f2ff 50%,
+            #ffe8f3 75%,
+            #fff6e8 100%
+          )
+        `,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="w-full max-w-2xl"
+      >
+        <Card className="rounded-3xl shadow-2xl border border-white/40 bg-white/90 backdrop-blur-xl">
+          <CardContent className="p-8 md:p-12 text-center space-y-8">
 
-      <div className="max-w-6xl w-full text-center space-y-20">
+            <p className={`${montserrat.className} text-sm tracking-[0.3em] text-gray-500`}>
+              WEDDING INVITATION
+            </p>
 
-        {/* TOP TITLE */}
-        <div className="space-y-6">
-          <p className="tracking-[0.4em] text-gray-500 text-sm">
-            WE ARE GETTING MARRIED
-          </p>
+            {/* Bride & Groom */}
+            <div className="grid grid-cols-2 gap-6 md:gap-10 text-center">
 
-          {/* ชื่อบ่าวสาวใหญ่ ๆ ตรงกลาง */}
-          <h1 className={`${greatVibes.className} text-8xl md:text-[120px] leading-none`}>
-            Mew & Best
-          </h1>
-        </div>
+              <div className="space-y-3">
+                <h2 className={`${greatVibes.className} text-7xl md:text-8xl text-gray-800`}>
+                  Mew
+                </h2>
+                <p className={`${playfair.className} text-2xl md:text-3xl text-gray-700`}>
+                  ดร. เมวดี สร้อยทอง
+                </p>
+                <div className={`${montserrat.className} text-sm md:text-base text-gray-600 leading-relaxed pt-2`}>
+                  <p>ศ.ดร เกษม สร้อยทอง</p>
+                  <p>กอบบุญ สร้อยทอง</p>
+                </div>
+              </div>
 
-        {/* SECTION ข้อมูลครอบครัว */}
-        <div className="bg-white/70 backdrop-blur-md rounded-3xl shadow-xl p-14 space-y-14">
+              <div className="space-y-3">
+                <h2 className={`${greatVibes.className} text-7xl md:text-8xl text-gray-800`}>
+                  Best
+                </h2>
+                <p className={`${playfair.className} text-2xl md:text-3xl text-gray-700`}>
+                  อิติ อรุณขจรศักดิ์
+                </p>
+                <div className={`${montserrat.className} text-sm md:text-base text-gray-600 leading-relaxed pt-2`}>
+                  <p>อิทธิศักดิ์ นวทวีเศรษฐ์</p>
+                  <p>นิตย์รดี อรุณขจรศักดิ์</p>
+                </div>
+              </div>
 
-          {/* ชื่อจริงบ่าวสาว */}
-          <div className="grid grid-cols-2 gap-12 text-center">
-
-            <div>
-              <h2 className={`${greatVibes.className} text-7xl`}>
-                Mew
-              </h2>
-              <p className={`${playfair.className} text-3xl font-semibold mt-4`}>
-                ดร. เมวดี สร้อยทอง
-              </p>
-              <p className="text-gray-500 text-lg">(มิว)</p>
             </div>
 
-            <div>
-              <h2 className={`${greatVibes.className} text-7xl`}>
-                Best
-              </h2>
-              <p className={`${playfair.className} text-3xl font-semibold mt-4`}>
-                อิติ อรุณขจรศักดิ์
-              </p>
-              <p className="text-gray-500 text-lg">(เบส)</p>
+            <div className="flex justify-center">
+              <Heart className="w-6 h-6 text-rose-400" />
             </div>
 
-          </div>
-
-          {/* พ่อ */}
-          <div className="grid grid-cols-2 gap-12 text-2xl text-gray-800">
-
-            <div>
-              <p className="text-sm tracking-widest text-gray-400 mb-3">
-                FATHER
+            {/* Date */}
+            <div className="space-y-3">
+              <div className="flex items-center justify-center gap-3 text-gray-700">
+                <CalendarDays className="w-6 h-6" />
+                <p className={`${playfair.className} text-3xl md:text-4xl font-semibold`}>
+                  Saturday, 16 May 2026
+                </p>
+              </div>
+              <p className={`${montserrat.className} text-xl text-gray-700`}>
+                09.09 AM
               </p>
-              <p>ศ.ดร เกษม สร้อยทอง</p>
             </div>
 
-            <div>
-              <p className="text-sm tracking-widest text-gray-400 mb-3">
-                FATHER
+            {/* Location */}
+            <div className="space-y-3">
+              <div className="flex items-center justify-center gap-2 text-gray-700">
+                <MapPin className="w-5 h-5" />
+                <p className={`${playfair.className} text-xl md:text-2xl font-medium`}>
+                  Canale House
+                </p>
+              </div>
+              <p className={`${montserrat.className} text-gray-600 text-sm md:text-base`}>
+                Bangkok, Thailand
               </p>
-              <p>อิทธิศักดิ์ นวทวีเศรษฐ์</p>
+
+              <div className="pt-4 flex flex-col items-center gap-2">
+                <img
+                  src={qrCodeUrl}
+                  alt="QR Code Location"
+                  className="w-44 h-44 rounded-2xl shadow-md"
+                />
+                <p className={`${montserrat.className} text-xs text-gray-500`}>
+                  Scan for location
+                </p>
+              </div>
             </div>
 
-          </div>
-
-          {/* แม่ */}
-          <div className="grid grid-cols-2 gap-12 text-2xl text-gray-800">
-
-            <div>
-              <p className="text-sm tracking-widest text-gray-400 mb-3">
-                MOTHER
-              </p>
-              <p>กอบบุญ สร้อยทอง</p>
+            <div className={`${playfair.className} pt-6 border-t text-gray-600 text-sm md:text-base leading-relaxed`}>
+              ด้วยความยินดีอย่างยิ่ง
+              ขอเรียนเชิญท่านร่วมเป็นเกียรติในพิธีมงคลสมรส
+              และร่วมแสดงความยินดีกับคู่บ่าวสาว
             </div>
 
-            <div>
-              <p className="text-sm tracking-widest text-gray-400 mb-3">
-                MOTHER
+            {/* Schedule */}
+            <div className="pt-6 space-y-3">
+              <p className={`${playfair.className} text-xl md:text-2xl text-gray-800`}>
+                ลำดับพิธีการ
               </p>
-              <p>นิตย์รดี อรุณขจรศักดิ์</p>
+              <div className={`${montserrat.className} text-gray-700 space-y-1 text-sm md:text-base`}>
+                <p>09.00 น.  พิธีหมั้น</p>
+                <p>10.00 น.  พิธียกน้ำชา</p>
+                <p>11.00 น.  รับประทานอาหาร</p>
+              </div>
             </div>
 
-          </div>
-
-        </div>
-
-      </div>
-    </main>
-  )
+          </CardContent>
+        </Card>
+      </motion.div>
+    </div>
+  );
 }

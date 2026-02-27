@@ -92,8 +92,8 @@ export default function WeddingInvitationPage() {
                     บุตรของ
                   </p>
                   <p className={`${montserrat.className} text-xs md:text-sm text-gray-600 leading-relaxed`}>
-                    พ่อ อรุณขจรศักดิ์<br />
-                    แม่ อรุณขจรศักดิ์
+                    อิทธิศักดิ์ นวทวีเศรษฐ์<br />
+                    นิตย์รดี อรุณขจรศักดิ์
                   </p>
                 </div>
               </div>

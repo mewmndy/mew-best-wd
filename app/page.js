@@ -1,19 +1,12 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { CalendarDays, MapPin, Heart } from "lucide-react";
 import { Great_Vibes, Playfair_Display, Montserrat } from "next/font/google";
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" });
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "600", "700"] });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export default function WeddingInvitationPage() {
   const locationUrl = "https://maps.app.goo.gl/iN4wMiWQiDUijL6K9";
@@ -54,75 +47,50 @@ export default function WeddingInvitationPage() {
         transition={{ duration: 0.8 }}
         className="w-full max-w-2xl"
       >
-        <div className="rounded-2xl shadow-2xl border border-white/40 bg-white/90 backdrop-blur-md">
-          <div className="p-6 md:p-8 text-center space-y-6">
-            <p
-              className={`${montserrat.className} text-base tracking-widest text-gray-500 mb-2`}
-            >
+
+            <p className={`${montserrat.className} text-base tracking-widest text-gray-500 mb-2`}>
               WEDDING INVITATION
             </p>
 
-            {/* Bride & Groom Section */}
+            {/* Bride & Groom Section */
             <div className="flex justify-center">
               <div className="w-full max-w-2xl grid grid-cols-2 gap-4 text-center">
                 {/* Bride */}
                 <div className="space-y-2">
-                  <h2
-                    className={`${greatVibes.className} text-7xl md:text-8xl text-gray-800`}
-                  >
+                  <h2 className={`${greatVibes.className} text-7xl md:text-8xl text-gray-800`}>
                     Mew
                   </h2>
-                  <p
-                    className={`${playfair.className} text-2xl md:text-3xl text-gray-700`}
-                  >
+                  <p className={`${playfair.className} text-2xl md:text-3xl text-gray-700`}>
                     ดร. เมวดี สร้อยทอง
                   </p>
-                  <p
-                    className={`${montserrat.className} text-xs text-gray-400`}
-                  >
+                  <p className={`${montserrat.className} text-xs text-gray-400`}>
                     (มิว)
                   </p>
-                  <p
-                    className={`${montserrat.className} text-sm text-gray-500 pt-2`}
-                  >
+                  <p className={`${montserrat.className} text-sm text-gray-500 pt-2`}>
                     บุตรของ
                   </p>
-                  <p
-                    className={`${montserrat.className} text-sm md:text-base text-gray-700 leading-relaxed`}
-                  >
-                    ศ.ดร เกษม สร้อยทอง
-                    <br />
+                  <p className={`${montserrat.className} text-sm md:text-base text-gray-700 leading-relaxed`}>
+                    ศ.ดร เกษม สร้อยทอง<br />
                     กอบบุญ สร้อยทอง
                   </p>
                 </div>
 
                 {/* Groom */}
                 <div className="space-y-2">
-                  <h2
-                    className={`${greatVibes.className} text-7xl md:text-8xl text-gray-800`}
-                  >
+                  <h2 className={`${greatVibes.className} text-7xl md:text-8xl text-gray-800`}>
                     Best
                   </h2>
-                  <p
-                    className={`${playfair.className} text-2xl md:text-3xl text-gray-700`}
-                  >
+                  <p className={`${playfair.className} text-2xl md:text-3xl text-gray-700`}>
                     อิติ อรุณขจรศักดิ์
                   </p>
-                  <p
-                    className={`${montserrat.className} text-xs text-gray-400`}
-                  >
+                  <p className={`${montserrat.className} text-xs text-gray-400`}>
                     (เบส)
                   </p>
-                  <p
-                    className={`${montserrat.className} text-sm text-gray-500 pt-2`}
-                  >
+                  <p className={`${montserrat.className} text-sm text-gray-500 pt-2`}>
                     บุตรของ
                   </p>
-                  <p
-                    className={`${montserrat.className} text-sm md:text-base text-gray-700 leading-relaxed`}
-                  >
-                    พ่อ อรุณขจรศักดิ์
-                    <br />
+                  <p className={`${montserrat.className} text-sm md:text-base text-gray-700 leading-relaxed`}>
+                    พ่อ อรุณขจรศักดิ์<br />
                     แม่ อรุณขจรศักดิ์
                   </p>
                 </div>
@@ -137,15 +105,11 @@ export default function WeddingInvitationPage() {
             <div className="space-y-2">
               <div className="flex items-center justify-center gap-2 text-gray-700">
                 <CalendarDays className="w-6 h-6" />
-                <p
-                  className={`${playfair.className} text-4xl md:text-5xl font-semibold`}
-                >
+                <p className={`${playfair.className} text-4xl md:text-5xl font-semibold`}>
                   Saturday, 16 May 2026
                 </p>
               </div>
-              <p
-                className={`${montserrat.className} text-2xl md:text-3xl text-gray-700`}
-              >
+              <p className={`${montserrat.className} text-2xl md:text-3xl text-gray-700`}>
                 09.09 AM
               </p>
             </div>
@@ -154,15 +118,11 @@ export default function WeddingInvitationPage() {
             <div className="space-y-2">
               <div className="flex items-center justify-center gap-2 text-gray-700">
                 <MapPin className="w-5 h-5" />
-                <p
-                  className={`${playfair.className} text-xl md:text-2xl font-medium`}
-                >
+                <p className={`${playfair.className} text-xl md:text-2xl font-medium`}>
                   Canale House
                 </p>
               </div>
-              <p
-                className={`${montserrat.className} text-gray-600 text-sm md:text-base`}
-              >
+              <p className={`${montserrat.className} text-gray-600 text-sm md:text-base`}>
                 Bangkok, Thailand
               </p>
 
@@ -172,17 +132,13 @@ export default function WeddingInvitationPage() {
                   alt="QR Code Location"
                   className="w-40 h-40 rounded-xl shadow-md"
                 />
-                <p
-                  className={`${montserrat.className} text-xs text-gray-500`}
-                >
+                <p className={`${montserrat.className} text-xs text-gray-500`}>
                   Scan for location
                 </p>
               </div>
             </div>
 
-            <div
-              className={`${playfair.className} pt-6 border-t text-gray-600 text-sm md:text-base leading-relaxed`}
-            >
+            <div className={`${playfair.className} pt-6 border-t text-gray-600 text-sm md:text-base leading-relaxed`}>
               ด้วยความยินดีอย่างยิ่ง
               ขอเรียนเชิญท่านร่วมเป็นเกียรติในพิธีมงคลสมรส
               และร่วมแสดงความยินดีกับคู่บ่าวสาว
@@ -190,22 +146,16 @@ export default function WeddingInvitationPage() {
 
             {/* Schedule */}
             <div className="pt-6 space-y-2">
-              <p
-                className={`${playfair.className} text-xl md:text-2xl text-gray-800`}
-              >
+              <p className={`${playfair.className} text-xl md:text-2xl text-gray-800`}>
                 ลำดับพิธีการ
               </p>
-              <div
-                className={`${montserrat.className} text-gray-700 space-y-1 text-sm md:text-base`}
-              >
-                <p>09.00 น. พิธีหมั้น</p>
-                <p>10.00 น. พิธียกน้ำชา</p>
-                <p>11.00 น. รับประทานอาหาร</p>
+              <div className={`${montserrat.className} text-gray-700 space-y-1 text-sm md:text-base`}>
+                <p>09.00 น.  พิธีหมั้น</p>
+                <p>10.00 น.  พิธียกน้ำชา</p>
+                <p>11.00 น.  รับประทานอาหาร</p>
               </div>
             </div>
 
-          </div>
-        </div>
       </motion.div>
     </div>
   );

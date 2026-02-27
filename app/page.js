@@ -9,168 +9,96 @@ const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "600", "
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export default function WeddingInvitationPage() {
-  const locationUrl = "https://maps.app.goo.gl";
-  const qrCodeUrl = `https://api.qrserver.com{encodeURIComponent(
+  const locationUrl = "https://maps.app.goo.gl/iN4wMiWQiDUijL6K9";
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
     locationUrl
   )}`;
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center p-6 md:p-12 overflow-hidden"
+      className="min-h-screen flex items-center justify-center p-8 md:p-12"
       style={{
         backgroundImage: `
-          radial-gradient(at 15% 25%, rgba(255,220,230,0.4) 0px, transparent 45%),
-          radial-gradient(at 85% 15%, rgba(255,235,210,0.4) 0px, transparent 45%),
-          linear-gradient(120deg, #fffaf4 0%, #ffeef4 100%)
+          radial-gradient(at 10% 20%, rgba(30,58,138,0.08) 0px, transparent 40%),
+          radial-gradient(at 90% 10%, rgba(30,58,138,0.06) 0px, transparent 35%),
+          radial-gradient(at 15% 25%, rgba(255,220,230,0.55) 0px, transparent 45%),
+          radial-gradient(at 85% 15%, rgba(255,235,210,0.55) 0px, transparent 45%),
+          linear-gradient(120deg,#fff6e8,#ffe4ec,#e6f2ff,#ffe8f3,#f3ecff,#fff1dc,#ffdce8,#fff6e8)
         `,
         backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.98 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
-        className="w-full max-w-3xl bg-white/40 backdrop-blur-sm p-8 md:p-16 rounded-[40px] shadow-2xl border border-white/50 text-center relative"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="w-full max-w-2xl text-center space-y-10"
       >
-        {/* Header Tag */}
-        <motion.p 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className={`${montserrat.className} text-[10px] md:text-xs tracking-[0.3em] text-rose-400 font-semibold mb-12 uppercase`}
-        >
-          The Wedding Celebration
-        </motion.p>
+        <p className={`${montserrat.className} text-base tracking-widest text-gray-500`}>
+          WEDDING INVITATION
+        </p>
 
-        {/* Main Section: Bride & Groom Split */}
-        <div className="relative mb-12">
-          {/* Vertical Divider Line */}
-          <div className="absolute left-1/2 top-10 bottom-0 w-[1px] bg-gradient-to-b from-rose-200 to-transparent hidden md:block" />
-
-          <div className="grid grid-cols-2 gap-4 md:gap-12 items-start">
-            {/* Bride - Left Side */}
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="space-y-4"
-            >
-              <h2 className={`${greatVibes.className} text-6xl md:text-9xl text-gray-800 leading-tight`}>
+        {/* Bride & Groom Section */}
+        <div className="flex justify-center">
+          <div className="w-full grid grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <h2 className={`${greatVibes.className} text-6xl md:text-7xl text-gray-800`}>
                 Mew
               </h2>
-              <div className="space-y-1 px-2">
-                <p className={`${playfair.className} text-xl md:text-3xl font-bold text-gray-800`}>
-                  ดร. เมวดี สร้อยทอง
-                </p>
-                <p className={`${montserrat.className} text-sm text-gray-400`}>(มิว)</p>
-              </div>
-              <div className="pt-4 border-t border-rose-100/50 mx-4">
-                <p className={`${montserrat.className} text-[10px] text-gray-400 uppercase mb-2 tracking-widest`}>บุตรของ</p>
-                <p className={`${playfair.className} text-xs md:text-base text-gray-700 leading-relaxed`}>
-                  ศ.ดร เกษม สร้อยทอง<br />
-                  กอบบุญ สร้อยทอง
-                </p>
-              </div>
-            </motion.div>
+              <p className={`${playfair.className} text-2xl text-gray-700`}>
+                ดร. เมวดี สร้อยทอง
+              </p>
+            </div>
 
-            {/* Groom - Right Side */}
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="space-y-4"
-            >
-              <h2 className={`${greatVibes.className} text-6xl md:text-9xl text-gray-800 leading-tight`}>
+            <div className="space-y-2">
+              <h2 className={`${greatVibes.className} text-6xl md:text-7xl text-gray-800`}>
                 Best
               </h2>
-              <div className="space-y-1 px-2">
-                <p className={`${playfair.className} text-xl md:text-3xl font-bold text-gray-800`}>
-                  อิติ อรุณขจรศักดิ์
-                </p>
-                <p className={`${montserrat.className} text-sm text-gray-400`}>(เบส)</p>
-              </div>
-              <div className="pt-4 border-t border-rose-100/50 mx-4">
-                <p className={`${montserrat.className} text-[10px] text-gray-400 uppercase mb-2 tracking-widest`}>บุตรของ</p>
-                <p className={`${playfair.className} text-xs md:text-base text-gray-700 leading-relaxed`}>
-                  คุณพ่อ อรุณขจรศักดิ์<br />
-                  คุณแม่ อรุณขจรศักดิ์
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Center Heart Icon */}
-          <div className="absolute left-1/2 top-14 -translate-x-1/2 bg-white/80 p-2 rounded-full hidden md:block">
-            <Heart className="w-6 h-6 text-rose-300 fill-rose-300" />
-          </div>
-        </div>
-
-        {/* Date & Time Section (Full Width) */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="bg-white/30 rounded-3xl p-8 mb-12 border border-white/60 shadow-sm"
-        >
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex items-center gap-4 w-full justify-center">
-               <div className="h-[1px] flex-1 bg-rose-200/50 hidden md:block" />
-               <div className="flex items-center gap-3">
-                 <CalendarDays className="w-6 h-6 text-rose-400" />
-                 <p className={`${playfair.className} text-3xl md:text-5xl font-bold text-gray-800`}>
-                   16 May 2026
-                 </p>
-               </div>
-               <div className="h-[1px] flex-1 bg-rose-200/50 hidden md:block" />
-            </div>
-            <p className={`${montserrat.className} text-xl md:text-2xl text-rose-500 font-medium tracking-[0.2em]`}>
-              09:09 AM
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Location & QR Code Section */}
-        <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
-          <div className="text-center md:text-right space-y-3">
-            <div className="flex items-center justify-center md:justify-end gap-2 text-gray-800">
-              <MapPin className="w-5 h-5 text-rose-400" />
-              <p className={`${playfair.className} text-2xl md:text-3xl font-semibold`}>Canale House</p>
-            </div>
-            <p className={`${montserrat.className} text-gray-500 text-sm md:text-base`}>
-              Bangkok, Thailand
-            </p>
-            <p className={`${playfair.className} pt-4 text-gray-600 italic leading-relaxed text-sm md:text-base`}>
-              "ด้วยความยินดีอย่างยิ่ง ขอเรียนเชิญท่านร่วมเป็นเกียรติ<br/>ในพิธีมงคลสมรสของเรา"
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center md:items-start gap-3">
-             <div className="p-2 bg-white rounded-2xl shadow-lg border border-rose-50">
-               <img src={qrCodeUrl} alt="Location QR" className="w-32 h-32 md:w-36 md:h-36" />
-             </div>
-             <p className={`${montserrat.className} text-[10px] text-gray-400 tracking-widest uppercase`}>
-               Scan for Location
-             </p>
-          </div>
-        </div>
-
-        {/* Schedule Summary */}
-        <div className="pt-10 border-t border-rose-100">
-          <p className={`${playfair.className} text-xl mb-6 font-semibold text-gray-800`}>ลำดับพิธีการ</p>
-          <div className="inline-flex flex-col md:flex-row gap-4 md:gap-12 text-sm md:text-base">
-            <div className="flex items-center gap-3">
-              <span className="text-rose-400 font-bold">09.00</span>
-              <span className="text-gray-600">พิธีหมั้น</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-rose-400 font-bold">10.00</span>
-              <span className="text-gray-600">พิธียกน้ำชา</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-rose-400 font-bold">11.00</span>
-              <span className="text-gray-600">รับประทานอาหาร</span>
+              <p className={`${playfair.className} text-2xl text-gray-700`}>
+                อิติ อรุณขจรศักดิ์
+              </p>
             </div>
           </div>
         </div>
 
+        <div className="flex justify-center -mt-4">
+          <Heart className="w-7 h-7 text-rose-400" />
+        </div>
+
+        {/* Date Section */}
+        <div className="space-y-3">
+          <div className="flex items-center justify-center gap-2 text-gray-700">
+            <CalendarDays className="w-6 h-6" />
+            <p className={`${playfair.className} text-3xl md:text-4xl font-semibold`}>
+              Saturday, 16 May 2026
+            </p>
+          </div>
+          <p className={`${montserrat.className} text-xl text-gray-700`}>
+            09.09 AM
+          </p>
+        </div>
+
+        {/* Location */}
+        <div className="space-y-3">
+          <div className="flex items-center justify-center gap-2 text-gray-700">
+            <MapPin className="w-5 h-5" />
+            <p className={`${playfair.className} text-xl font-medium`}>
+              Canale House
+            </p>
+          </div>
+
+          <div className="pt-4 flex flex-col items-center gap-2">
+            <img
+              src={qrCodeUrl}
+              alt="QR Code Location"
+              className="w-40 h-40 rounded-xl shadow-md"
+            />
+            <p className={`${montserrat.className} text-xs text-gray-500`}>
+              Scan for location
+            </p>
+          </div>
+        </div>
       </motion.div>
     </div>
   );

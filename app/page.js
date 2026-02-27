@@ -1,20 +1,23 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-rose-100 via-pink-50 to-amber-50 flex items-center justify-center p-6">
-      
-      <div className="max-w-3xl w-full bg-white/80 backdrop-blur-md shadow-2xl rounded-3xl border border-amber-200 p-8 md:p-14 relative overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-br from-rose-200 via-pink-100 to-amber-100 flex items-center justify-center p-6">
 
-        {/* Gold Corner Decoration */}
-        <div className="absolute top-0 right-0 w-32 h-32 border-t-4 border-r-4 border-amber-300 rounded-tr-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-32 h-32 border-b-4 border-l-4 border-amber-300 rounded-bl-3xl"></div>
+      <div className="relative max-w-4xl w-full bg-gradient-to-b from-white/80 to-rose-50/80 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] rounded-[40px] border border-amber-200 p-8 md:p-16 overflow-hidden">
 
-        {/* Title */}
-        <div className="text-center space-y-4">
-          <p className="text-amber-600 tracking-widest text-sm uppercase">
+        {/* Soft Gold Frame */}
+        <div className="absolute inset-4 border border-amber-300 rounded-[32px] pointer-events-none"></div>
+
+        {/* Floral Glow Corners */}
+        <div className="absolute -top-20 -left-20 w-72 h-72 bg-rose-300/30 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-amber-300/30 rounded-full blur-3xl"></div>
+
+        {/* Header */}
+        <div className="text-center space-y-4 relative z-10">
+          <p className="text-amber-600 tracking-[0.3em] text-sm">
             พิธีมงคลสมรส
           </p>
 
-          <h1 className="text-4xl md:text-6xl font-serif text-rose-700">
+          <h1 className="text-4xl md:text-6xl font-serif text-rose-700 leading-tight">
             Phupha & Waranya
           </h1>
 
@@ -23,51 +26,80 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Divider */}
-        <div className="my-10 border-t border-amber-200"></div>
+        {/* Couple Photo Circle */}
+        <div className="flex justify-center mt-12 relative z-10">
+          <div className="relative">
+            <div className="w-72 h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-amber-300 to-rose-400 p-2 shadow-2xl">
+              <div className="w-full h-full rounded-full overflow-hidden border-4 border-white">
+                <img
+                  src="https://images.unsplash.com/photo-1606800052052-a08af7148866"
+                  alt="couple"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-        {/* Date Section */}
-        <div className="text-center space-y-2">
-          <p className="text-2xl md:text-3xl font-medium text-rose-800">
+        {/* Date */}
+        <div className="text-center mt-10 relative z-10">
+          <p className="text-3xl md:text-4xl font-medium text-rose-800">
             29 สิงหาคม 2569
           </p>
-          <p className="text-gray-600">
+          <p className="text-gray-600 mt-2">
             เวลา 09:00 น. – 18:30 น.
           </p>
         </div>
 
         {/* Event Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mt-10">
-          
-          <div className="bg-white rounded-2xl shadow-md p-6 border border-rose-100">
-            <h3 className="text-lg font-semibold text-rose-700">
+        <div className="grid md:grid-cols-2 gap-8 mt-12 relative z-10">
+
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg border border-rose-200 p-8 hover:scale-105 transition duration-300">
+            <h3 className="text-xl font-semibold text-rose-700 mb-4">
               พิธีเช้า
             </h3>
-            <p className="text-gray-600 mt-2">
+            <p className="text-gray-700 text-lg">
               09:00 น.
             </p>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 mt-2">
               ณ เรือนไทยริมน้ำ
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-md p-6 border border-rose-100">
-            <h3 className="text-lg font-semibold text-rose-700">
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg border border-rose-200 p-8 hover:scale-105 transition duration-300">
+            <h3 className="text-xl font-semibold text-rose-700 mb-4">
               งานเลี้ยงฉลอง
             </h3>
-            <p className="text-gray-600 mt-2">
+            <p className="text-gray-700 text-lg">
               18:30 น.
             </p>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 mt-2">
               Grand Siam Hotel
             </p>
           </div>
 
         </div>
 
-        {/* RSVP Button */}
-        <div className="mt-12 text-center">
-          <button className="bg-gradient-to-r from-rose-500 to-amber-400 text-white px-8 py-3 rounded-full shadow-lg hover:scale-105 transition">
+        {/* Map Section */}
+        <div className="mt-16 relative z-10">
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-amber-200 p-8 text-center">
+            <h3 className="text-xl font-semibold text-rose-700 mb-4">
+              สถานที่จัดงาน
+            </h3>
+
+            <div className="w-full h-48 rounded-2xl bg-gradient-to-r from-rose-200 to-amber-200 flex items-center justify-center text-gray-600">
+              แผนที่แสดงตำแหน่งสถานที่
+            </div>
+
+            <button className="mt-6 bg-gradient-to-r from-rose-500 to-amber-400 text-white px-8 py-3 rounded-full shadow-lg hover:scale-105 transition">
+              เปิดแผนที่ใน Google Maps
+            </button>
+          </div>
+        </div>
+
+        {/* RSVP */}
+        <div className="mt-16 text-center relative z-10">
+          <button className="bg-gradient-to-r from-rose-600 to-amber-500 text-white px-10 py-4 rounded-full text-lg shadow-2xl hover:scale-110 transition duration-300">
             ยืนยันการเข้าร่วมงาน
           </button>
         </div>

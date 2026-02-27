@@ -39,8 +39,7 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="w-full max-w-5xl"
       >
-        {/* Glass Card */}
-        <div className="bg-white/40 backdrop-blur-3xl border border-white/50 shadow-[0_25px_70px_rgba(0,0,0,0.15)] rounded-[45px] p-10 md:p-16 space-y-14">
+        <div className="bg-white/50 backdrop-blur-3xl border border-white/60 shadow-[0_30px_80px_rgba(0,0,0,0.12)] rounded-[50px] p-10 md:p-16 space-y-16">
 
           {/* Header */}
           <div className="text-center space-y-4">
@@ -51,12 +50,12 @@ export default function Home() {
           </div>
 
           {/* Bride & Groom */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-center relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 text-center relative">
 
-            <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-transparent via-gray-300/70 to-transparent" />
+            <div className="hidden md:block absolute left-1/2 top-10 -translate-x-1/2 h-[80%] w-px bg-gradient-to-b from-transparent via-gray-300/60 to-transparent" />
 
             {/* Bride */}
-            <div className="space-y-5">
+            <div className="space-y-6">
               <h2 className={`${greatVibes.className} text-8xl`}>
                 Mew
               </h2>
@@ -67,20 +66,18 @@ export default function Home() {
 
               <p className="text-gray-500 text-sm">(มิว)</p>
 
-              <div className="pt-4 space-y-2">
-                <p className="text-gray-500 text-sm tracking-wide">
-                  บุตรของ
-                </p>
-                <p className="text-gray-700 text-lg leading-relaxed">
+              <div className="pt-6 space-y-3">
+                <p className="text-gray-700 text-xl leading-relaxed">
                   ศ.ดร เกษม สร้อยทอง
-                  <br />
+                </p>
+                <p className="text-gray-700 text-xl leading-relaxed">
                   กอบบุญ สร้อยทอง
                 </p>
               </div>
             </div>
 
             {/* Groom */}
-            <div className="space-y-5">
+            <div className="space-y-6">
               <h2 className={`${greatVibes.className} text-8xl`}>
                 Best
               </h2>
@@ -91,13 +88,11 @@ export default function Home() {
 
               <p className="text-gray-500 text-sm">(เบส)</p>
 
-              <div className="pt-4 space-y-2">
-                <p className="text-gray-500 text-sm tracking-wide">
-                  บุตรของ
-                </p>
-                <p className="text-gray-700 text-lg leading-relaxed">
+              <div className="pt-6 space-y-3">
+                <p className="text-gray-700 text-xl leading-relaxed">
                   อิทธิศักดิ์ นวทวีเศรษฐ์
-                  <br />
+                </p>
+                <p className="text-gray-700 text-xl leading-relaxed">
                   นิตย์รดี อรุณขจรศักดิ์
                 </p>
               </div>
@@ -142,7 +137,7 @@ export default function Home() {
           </div>
 
           {/* Schedule */}
-          <div className="text-center pt-6 border-t space-y-3">
+          <div className="text-center pt-6 border-t border-gray-200 space-y-3">
             <p className={`${playfair.className} text-2xl`}>
               ลำดับพิธีการ
             </p>
